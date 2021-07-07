@@ -14,9 +14,6 @@ const increment = () => {
 };
 
 const decrement = () => {
-  if (counterValue === 0) {
-    return;
-  }
   counterValue -= 1;
   valueRef.textContent = counterValue;
 };

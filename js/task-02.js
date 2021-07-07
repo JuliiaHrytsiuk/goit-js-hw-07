@@ -7,17 +7,12 @@ const ingredients = [
   "Приправы",
 ];
 
-const ingredientsRef = document.querySelector("#ingredients");
-
-const createElement = (name) => {
-  const element = document.createElement("li");
-  element.textContent = name;
-  return element;
+const listContainer = document.querySelector("ul#ingredients");
+const insertListItems = (items) => {
+  const unit = document.createElement(`li`);
+  unit.textContent = items;
+  return unit;
 };
+const allUnits = ingredients.map((items) => insertListItems(items));
 
-const addElementsToList = (list, array) => {
-  const setOfElements = array.map(createElement);
-  list.append(...setOfElements);
-};
-
-addElementsToList(ingredientsRef, ingredients);
+listContainer.append(...allUnits);
